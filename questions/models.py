@@ -35,7 +35,7 @@ class SingleWordQuestion(models.Model):
         return str(self.text)
 
     def get_answers(self):
-        return singlewordanswer_set.all()
+        return self.singlewordanswer_set.all()
 
 class SingleWordAnswer(models.Model):
     text = models.CharField(max_length=200)
