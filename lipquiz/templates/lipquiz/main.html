@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block scripts %}
+    <script src="{% static 'lipquiz/main.js' %}" defer></script>
+{% endblock scripts %}
+
 {% block content %}
-    <b>This is the hello world html page</b>
-    <img src="/media/sample_image.png">
+    {% for obj in object_list %}
+    <button class="start-quiz-button"
+        data-quiz="{{obj.name}}"
+        data-pk="{{obj.pk}}">
+        {{obj.name}}
+    </button>
+    {% endfor %}
 {% endblock content %}

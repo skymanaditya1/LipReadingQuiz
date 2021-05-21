@@ -1,0 +1,1 @@
+console.log("Inside the quiz view")
