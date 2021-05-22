@@ -9,11 +9,20 @@
 {{obj.name}}
 {% endblock title %}
 
-{% block content %} 
-    <b>Quiz: {{obj.name}}</b>
+{% block content %}
+    <div class="row">
+        <b>Quiz: {{obj.name}}</b>
+    </div>
+    <br>
+
+    <a href="{% url 'lipquiz:lip-quiz-view' %}" class="btn btn-danger">Go back</a>
+
     <form id='quiz-form' class='mt-3 mb-3'>
         {% csrf_token %}
         <div id="quiz-box"></div>
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
     </form>
+
+<div id="score-box"></div>
+<div id="result-box"></div>
 {% endblock content %}

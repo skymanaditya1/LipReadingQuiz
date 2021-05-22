@@ -1,6 +1,9 @@
 console.log("Inside the quiz view")
 const url = window.location.href
 const quizBox = document.getElementById('quiz-box')
+const quizForm = document.getElementById('quiz-form')
+const scoreBox = document.getElementById('score-box')
+const resultBox = document.getElementById('result-box')
 
 // loads the video quiz that was selected
 $.ajax({
@@ -39,4 +42,71 @@ $.ajax({
     error: function(error){
         console.log(error)
     }
+})
+
+const csrfToken = document.getElementsByName('csrfmiddlewaretoken')
+
+const sendData = () => {
+    const data = {}
+    data['csrfmiddlewaretoken'] = csrfToken[0].value
+    const elements = [...document.getElementsByClassName("ans")]
+    elements.forEach(el => {
+        // check if the radio button has been checked for (question, answer)
+        if (el.checked){
+            data[el.name] = el.value
+        }
+        else {
+            if(!data[el.name]){
+                data[el.name] = null
+            }
+        }
+    })
+
+    // make the ajax post request with the data 
+    $.ajax({
+        type: 'POST',
+        url: `${url}save/`,
+        data: data,
+        success: function(response){
+            scoreBox.innerHTML = `Congratulations! Your score is ${response.score}%.`
+            const results = response.results 
+            quizForm.classList.add('not-visible')
+            results.forEach(res => {
+                const resDiv = document.createElement("div")
+                for (const [question, resp] of Object.entries(res)){
+                    // console.log(question)
+                    // console.log(resp)
+
+                    resDiv.innerHTML += question
+                    const cls = ['container', 'p-3', 'text-light', 'h6']
+                    resDiv.classList.add(...cls)
+
+                    const correct = resp['correct_answer']
+                    const answered = resp['answered']
+
+                    if (correct == answered){
+                        resDiv.classList.add('bg-success')
+                        resDiv.innerHTML += ` | answered: ${answered}`
+                    } else {
+                        resDiv.classList.add('bg-danger')
+                        resDiv.innerHTML += ` | answered: ${answered}`
+                        resDiv.innerHTML += ` | correct: ${correct}`
+                    }
+                }
+
+                // const body = document.getElementsByTagName('BODY')[0]
+                resultBox.append(resDiv)
+            })
+        },
+        error: function(error){
+            console.log(error)
+        }
+    })
+}
+
+quizForm.addEventListener('submit', e => {
+    e.preventDefault()
+    console.log("Tried submitting the form")
+
+    sendData()
 })

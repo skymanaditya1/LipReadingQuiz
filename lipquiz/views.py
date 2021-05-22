@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView
 from .models import VideoQuiz
+from results.models import SingleWordResult
+from questions.models import SingleWordQuestion
 from django.http import JsonResponse
 
 # Create your views here.
@@ -29,3 +31,34 @@ def video_quiz_data_view(request, pk):
         'data': questions, 
         'time': videoquiz.time,
     })
+
+def video_quiz_data_save(request, pk):
+    if request.is_ajax():
+        data = request.POST
+        data = dict(data.lists())
+        data.pop('csrfmiddlewaretoken')
+
+        quiz = VideoQuiz.objects.get(pk=pk)
+        user = request.user
+
+        results = list()
+        score = 0
+        score_multiplier = 100/quiz.number_of_questions
+
+        for q in data.keys():
+            question = SingleWordQuestion.objects.get(video_path=q)
+            answers = question.get_answers()
+            for a in answers:
+                if a.correct:
+                    correct_answer = a.text
+            user_answered = data[q][0]
+            if correct_answer == user_answered:
+                score += 1
+            results.append({str(q):{"correct_answer":correct_answer, "answered":user_answered}})
+        
+        score_ = score_multiplier * score
+        print(f"Score: {score_}")
+
+        SingleWordResult.objects.create(quiz=quiz, user=user, score=score_)
+
+        return JsonResponse({'score': score_, 'results': results})
