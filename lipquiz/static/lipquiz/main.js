@@ -22,8 +22,8 @@ quizButtons.forEach(quizButton => quizButton.addEventListener('click', () => {
         <ul>
             <li>Description: <b>${description}</b></li>
             <li>Questions : <b>${questions}</b></li>        
-            <li>Difficulty: <b>${difficulty} mins</b></li>
-            <li>Quiz Type: <b>${quiz_type}%</b></li>
+            <li>Difficulty: <b>${difficulty}</b></li>
+            <li>Quiz Type: <b>${quiz_type}</b></li>
         <ul>
     </div>
     `
