@@ -1,0 +1,1 @@
+web: gunicorn lipreading_website.wsgi
