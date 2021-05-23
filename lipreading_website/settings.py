@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # All the other paths inside this directory are built as BASE_DIR / 'subdir'
@@ -154,3 +155,6 @@ LOGOUT_REDIRECT_URL = "dashboard"
 # SMTP server that django would be using for sending mails to the user
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 1025
+
+# Activate Django-Heroku
+django_on_heroku.settings(locals())

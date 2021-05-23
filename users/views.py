@@ -37,5 +37,4 @@ def register(request):
             login(request, user)
             return redirect(reverse("dashboard"))
     else:
-        form = SignUpFormuser/dashboard/()
-    return render(request, 'users/register.html', {'form':form})
+        return render(request, 'users/register.html', {'form':SignUpForm})
