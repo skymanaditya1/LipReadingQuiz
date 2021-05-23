@@ -19,18 +19,18 @@ def video_quiz_view(request, pk):
 def video_quiz_data_view(request, pk):
     videoquiz = VideoQuiz.objects.get(pk=pk)
     questions = list()
+    response = list()
     for q in videoquiz.get_questions():
         answers = list()
         for a in q.get_answers():
             answers.append(a.text)
         #questions.append({str(q.pk) + " " + q.text : answers})
         print(f"Video path: {q.video_path}")
+        response.append({'question': q.text, 'video_path': q.video_path, 'answer': answers})
         questions.append({q.video_path : answers})
 
-    return JsonResponse({
-        'data': questions, 
-        'time': videoquiz.time,
-    })
+    print(f"Response: {response}")
+    return JsonResponse(response, safe=False)
 
 def video_quiz_data_save(request, pk):
     if request.is_ajax():

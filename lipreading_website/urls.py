@@ -21,8 +21,8 @@ from django.conf import settings
 
 # Application urls are added to the project urls
 urlpatterns = [
-    path('', include('quizzes.urls', namespace='quizzes')),
-    path('lipquiz/quiz/', include('lipquiz.urls')),
+    path('wordquiz/quiz/', include('quizzes.urls', namespace='quizzes')),
+    path('', include('lipquiz.urls')),
     path('user/', include('users.urls')),
     path('admin/admin/', admin.site.urls),
 ]
