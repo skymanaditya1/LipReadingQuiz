@@ -1,6 +1,7 @@
 from django.db import models
 from quizzes.models import Quiz
 from lipquiz.models import VideoQuiz
+import random
 
 # Create your models here.
 class Question(models.Model):
@@ -35,7 +36,9 @@ class SingleWordQuestion(models.Model):
         return str(self.text)
 
     def get_answers(self):
-        return self.singlewordanswer_set.all()
+        answers = list(self.singlewordanswer_set.all())
+        random.shuffle(answers)
+        return answers
 
 class SingleWordAnswer(models.Model):
     text = models.CharField(max_length=200)

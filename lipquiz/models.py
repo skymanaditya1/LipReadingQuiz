@@ -1,4 +1,5 @@
 from django.db import models
+import random
 
 # Create your models here.
 QUIZ_TYPE = (
@@ -27,7 +28,9 @@ class VideoQuiz(models.Model):
         return f"{self.name}--{self.description}"
     
     def get_questions(self):
-        return self.singlewordquestion_set.all()
+        questions = list(self.singlewordquestion_set.all())
+        random.shuffle(questions)
+        return questions[:self.number_of_questions]
 
     class Meta:
         verbose_name_plural = 'VideoQuizzes'

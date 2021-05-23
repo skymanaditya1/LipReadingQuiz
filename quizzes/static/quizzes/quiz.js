@@ -114,10 +114,7 @@ const sendData = () => {
         url: `${url}save/`,
         data: data,
         success: function(response){
-
             score_box.innerHTML = `${response.passed ? 'Congratulations!' : 'Oops...'} Your score is ${response.score.toFixed(2)}%`
-
-            // console.log(response)
             const results = response.results 
             console.log(results)
             quizForm.classList.add('not-visible')

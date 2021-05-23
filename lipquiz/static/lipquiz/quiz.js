@@ -1,4 +1,3 @@
-console.log("Inside the quiz view")
 const url = window.location.href
 const quizBox = document.getElementById('quiz-box')
 const quizForm = document.getElementById('quiz-form')
@@ -10,34 +9,28 @@ $.ajax({
     type: 'GET',
     url: `${url}data`,
     success: function(response){
-        console.log(response)
-        data = response.data
-        data.forEach(element => {
-            for (const [question, answers] of Object.entries(element)){
-                // console.log(question)
-                quizBox.innerHTML += `
-                    <hr>
-                    <div class="mb-2">
-                        <b>${question}</b>
-                    </div>
+        response.forEach(element => {
+            quizBox.innerHTML += `
+                <hr>
+                <div class="mb-2">
+                    <b>${element.question}</b>
+                </div>
 
-                    <div class="mb-2">
-                        <video width="320" height="240" controls>
-                            <source src="/media/${question}" type="video/mp4">
-                        </video>
+                <div class="mb-2">
+                    <video width="320" height="240" controls>
+                        <source src="/media/${element.video_path}" type="video/mp4">
+                    </video>
+                </div>
+            `
+            element.answer.forEach(choice => {
+                quizBox.innerHTML += `
+                    <div>
+                        <input type="radio" class="ans" id="${element.video_path}-${choice}" name="${element.video_path}" value="${choice}" >
+                        <label for="${element.video_path}">${choice}</label>
                     </div>
                 `
-                
-                answers.forEach(answer => {
-                    quizBox.innerHTML += `
-                        <div>
-                            <input type="radio" class="ans" id="${question}-${answer}" name="${question}" value="${answer}" >
-                            <label for="${question}">${answer}</label>
-                        </div>
-                    `
-                })
-            }
-        });
+            });
+        })
     },
     error: function(error){
         console.log(error)
@@ -106,7 +99,5 @@ const sendData = () => {
 
 quizForm.addEventListener('submit', e => {
     e.preventDefault()
-    console.log("Tried submitting the form")
-
     sendData()
 })
