@@ -10,6 +10,7 @@
 {% endblock title %}
 
 {% block content %}
+{% if user.is_authenticated %}
     <div class="row">
         <b>Quiz: {{obj.name}}</b>
     </div>
@@ -25,4 +26,7 @@
 
 <div id="score-box"></div>
 <div id="result-box"></div>
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to attempt the Quiz</p>
+{% endif %}
 {% endblock content %}
