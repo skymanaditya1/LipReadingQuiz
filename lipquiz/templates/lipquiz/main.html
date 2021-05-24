@@ -6,7 +6,7 @@
 {% endblock scripts %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
 <!-- Modal -->
 <div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -43,4 +43,7 @@
         {{obj.name}}
     </button><br>
 {% endfor %}
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to view the Quizzes</p>
+{% endif %}
 {% endblock content %}

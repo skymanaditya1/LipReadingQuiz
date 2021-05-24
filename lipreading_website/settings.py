@@ -149,7 +149,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # change the login redirect to user dashboard
-LOGIN_REDIRECT_URL = "dashboard"
+LOGIN_REDIRECT_URL = "lipquiz:lip-quiz-view"
 LOGOUT_REDIRECT_URL = "dashboard"
 
 # SMTP server that django would be using for sending mails to the user
