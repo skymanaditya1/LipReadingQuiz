@@ -10,9 +10,10 @@
     {{ form.as_p }}
     <input type="submit" value="Login">
 </form>
+<br>
 
 <!-- This line uses reverse mapping to map back to the user dashboard -->
-<a href="{% url 'dashboard' %}">Back to dashboard</a>
-<a href="{% url 'password_reset' %}">Reset password</a>
+<a href="{% url 'dashboard' %}">Back to dashboard</a><br>
+<a href="{% url 'password_reset' %}">Reset password</a><br>
 <a href="{% url 'register' %}">Register</a>
 {% endblock %}
