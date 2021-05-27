@@ -1,0 +1,31 @@
+lipreading-at-the-restaurant_m60ra/shrimp_basket.sheri1.mp4	Shrimp Basket	Fish and Chips	Burger Boat	Ribs and Chicken Combo
+lipreading-at-the-restaurant_m60ra/margarita.sheri1.mp4	margarita	rum and coke	strawberry
+lipreading-at-the-restaurant_m60ra/would_you_like_brown_or_white_bread.sheri1.mp4	Good evening!	How many are there for breakfast?	What would you like to order?	Would you like brown or white bread?
+lipreading-at-the-restaurant_m60ra/would_you_like_a_cup_of_tea.sheri1.mp4	What sort of bread would you like?	Would you like a cup of tea?	Would you like a cup of coffee?	What fish do you prefer?
+lipreading-at-the-restaurant_m60ra/would_you_like_chips_with_that.sheri1.mp4	Is your steak just right?	How would you like your steak?	Would you like chips with that?	Would you like a glass of water?
+lipreading-at-the-restaurant_m60ra/would_you_like_a_table_for_two.sheri1.mp4	Would you like a glass of beer?	How many is the table for?	Would you like a table for two?	Can I get you some drinks?
+lipreading-at-the-restaurant_m60ra/what_would_you_like_for_dessert.sheri1.mp4	What would you like for your main course?	What would you like for dessert?	How would you like to pay?	Would you like something to drink?
+lipreading-at-the-restaurant_m60ra/would_you_like_to_see_the_wine_list.sheri1.mp4	Would you like to hear about the specials?	Would you like to see the wine list?	Will this be on separate checks?
+lipreading-at-the-restaurant_m60ra/good_bye.sheri1.mp4	Here is your bill.	Thank you!	Good bye.
+lipreading-at-the-restaurant_m60ra/do_you_want_to_split_an_appetizer.sheri1.mp4	Do you want to split an appetizer?	Let's get dessert!	Thanks for recommending this place
+lipreading-at-the-restaurant_pvufo/fish_and_chips.sheri1.mp4	Shrimp Basket	Fish and Chips	Burger Boat	Ribs and Chicken Combo
+lipreading-at-the-restaurant_pvufo/rum_and_coke.sheri1.mp4	margarita	rum and coke	strawberry
+lipreading-at-the-restaurant_pvufo/how_many_is_the_table_for.sheri1.mp4	Would you like a glass of beer?	How many is the table for?	Would you like a table for two?	Can I get you some drinks?
+lipreading-at-the-restaurant_pvufo/what_would_you_like_for_your_main_course.sheri1.mp4	What would you like for your main course?	What would you like for dessert?	How would you like to pay?	Would you like something to drink?
+lipreading-at-the-restaurant_pvufo/would_you_like_to_hear_about_the_specials.sheri1.mp4	Would you like to hear about the specials?	Would you like to see the wine list?	Will this be on separate checks?
+lipreading-at-the-restaurant_pvufo/thank_you.sheri1.mp4	Here is your bill.	Thank you!	Good bye.
+lipreading-at-the-restaurant_pvufo/thanks_for_recommending_this_place.sheri1.mp4	Do you want to split an appetizer?	Let's get dessert!	Thanks for recommending this place
+lipreading-at-the-restaurant_ea1z1/ribs_and_chicken_combo.sheri1.mp4	Shrimp Basket	Fish and Chips	Burger Boat	Ribs and Chicken Combo
+lipreading-at-the-restaurant_ea1z1/good_evening.sheri1.mp4	Good evening!	How many are there for breakfast?	What would you like to order?	Would you like brown or white bread?
+lipreading-at-the-restaurant_ea1z1/how_would_you_like_your_steak.sheri1.mp4	Is your steak just right?	How would you like your steak?	Would you like chips with that?	Would you like a glass of water?
+lipreading-at-the-restaurant_ea1z1/can_i_get_you_some_drinks.sheri1.mp4	Would you like a glass of beer?	How many is the table for?	Would you like a table for two?	Can I get you some drinks?
+lipreading-at-the-restaurant_ea1z1/how_would_you_like_to_pay.sheri1.mp4	What would you like for your main course?	What would you like for dessert?	How would you like to pay?	Would you like something to drink?
+lipreading-at-the-restaurant_ea1z1/will_this_be_on_separate_checks.sheri1.mp4	Would you like to hear about the specials?	Would you like to see the wine list?	Will this be on separate checks?
+lipreading-at-the-restaurant_ea1z1/thank_you.jen1.mp4	Here is your bill.	Thank you!	Good bye.
+lipreading-at-the-restaurant_ea1z1/lets_get_dessert.sheri1.mp4	Do you want to split an appetizer?	Let's get dessert!	Thanks for recommending this place
+lipreading-at-the-restaurant_fbk68/what_would_you_like_to_order.sheri1.mp4	Good evening!	How many are there for breakfast?	What would you like to order?	Would you like brown or white bread?
+lipreading-at-the-restaurant_fbk68/what_sort_of_bread_would_you_like.sheri1.mp4	What sort of bread would you like?	Would you like a cup of tea?	Would you like a cup of coffee?	What fish do you prefer?
+lipreading-at-the-restaurant_fbk68/would_you_like_something_to_drink.sheri1.mp4	What would you like for your main course?	What would you like for dessert?	How would you like to pay?	Would you like something to drink?
+lipreading-at-the-restaurant_fbk68/here_is_your_bill.sheri1.mp4	Here is your bill.	Thank you!	Good bye.
+lipreading-at-the-restaurant_c2t8j/what_fish_do_you_prefer.sheri1.mp4	What sort of bread would you like?	Would you like a cup of tea?	Would you like a cup of coffee?	What fish do you prefer?
+lipreading-at-the-restaurant_mg25c/would_you_like_a_cup_of_coffee.sheri1.mp4	What sort of bread would you like?	Would you like a cup of tea?	Would you like a cup of coffee?	What fish do you prefer?

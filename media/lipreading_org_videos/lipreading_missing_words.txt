@@ -1,0 +1,10 @@
+lipreading-missing-words_mnaia/how_are_you.nicole1.mp4	how
+lipreading-missing-words_mnaia/where_are_you.nicole1.mp4	where
+lipreading-missing-words_mnaia/when_will_you_arrive.nicole1.mp4	will
+lipreading-missing-words_mnaia/certainly.nicole1.mp4	certainly
+lipreading-missing-words_mnaia/good_afternoon.nicole1.mp4	good
+lipreading-missing-words_mnaia/good_evening.nicole1.mp4	good
+lipreading-missing-words_mnaia/good_luck.nicole1.mp4	good
+lipreading-missing-words_mnaia/good_morning.nicole1.mp4	morning
+lipreading-missing-words_mnaia/great.nicole1.mp4	great
+lipreading-missing-words_mnaia/hello.nicole1.mp4	hello

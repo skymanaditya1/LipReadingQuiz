@@ -1,0 +1,44 @@
+vowel-eyedrills_5pg4o/bounty.nicole1.mp4	bounty	bucket	ballot	bleed	belief
+vowel-eyedrills_5pg4o/book.nicole1.mp4	book	bought	buy	bat	bone
+vowel-eyedrills_5pg4o/meet.nicole1.mp4	mark	mice	meet	major	man
+vowel-eyedrills_5pg4o/boot.nicole1.mp4	beet	boot
+vowel-eyedrills_5pg4o/see.nicole1.mp4	see	soup
+vowel-eyedrills_5pg4o/soap.nicole1.mp4	see	soup	soap	ship	stop
+vowel-eyedrills_5pg4o/left.nicole1.mp4	leap	loop	lime	left
+vowel-eyedrills_5pg4o/pat.nicole1.mp4	peel	pool	pat
+vowel-eyedrills_5pg4o/hoot.nicole1.mp4	heat	hoot
+vowel-eyedrills_5pg4o/jewel.nicole1.mp4	jeep	jewel
+vowel-eyedrills_v7348/bleed.nicole1.mp4	bounty	bucket	ballot	bleed	belief
+vowel-eyedrills_v7348/buy.nicole1.mp4	book	bought	buy	bat	bone
+vowel-eyedrills_v7348/mark.nicole1.mp4	mark	mice	meet	major	man
+vowel-eyedrills_v7348/beet.nicole1.mp4	beet	boot
+vowel-eyedrills_v7348/soup.nicole1.mp4	see	soup
+vowel-eyedrills_v7348/ship.nicole1.mp4	see	soup	soap	ship	stop
+vowel-eyedrills_voop8/man.nicole1.mp4	mark	mice	meet	major	man
+vowel-eyedrills_voop8/lime.nicole1.mp4	leap	loop	lime	left
+vowel-eyedrills_voop8/peel.nicole1.mp4	peel	pool	pat
+vowel-eyedrills_56pg1/belief.nicole1.mp4	bounty	bucket	ballot	bleed	belief
+vowel-eyedrills_56pg1/bone.nicole1.mp4	book	bought	buy	bat	bone
+vowel-eyedrills_56pg1/stop.nicole1.mp4	see	soup	soap	ship	stop
+vowel-eyedrills_56pg1/heat.nicole1.mp4	heat	hoot
+consonants-eyedrills_lkys0/bat.nicole1.mp4	bat	bone	boys	breeze	blow
+consonants-eyedrills_lkys0/cabbage.nicole1.mp4	table	cabbage	describe	tab
+consonants-eyedrills_lkys0/table.nicole1.mp4	apply	apparatus	typing	table	cabbage
+consonants-eyedrills_lkys0/geese.nicole1.mp4	meet	geese
+consonants-eyedrills_lkys0/chill.nicole1.mp4	pill	chill
+consonants-eyedrills_lkys0/top.nicole1.mp4	top	chop
+consonants-eyedrills_lkys0/shoe.nicole1.mp4	moose	goose	food	shoe
+consonants-eyedrills_lkys0/pot.nicole1.mp4	pot	hot
+consonants-eyedrills_lkys0/shot.nicole1.mp4	pot	hot	fog	dob	shot
+consonants-eyedrills_qvshl/blow.nicole1.mp4	bat	bone	boys	breeze	blow
+consonants-eyedrills_qvshl/describe.nicole1.mp4	table	cabbage	describe	tab
+consonants-eyedrills_qvshl/apply.nicole1.mp4	apply	apparatus	typing	table	cabbage
+consonants-eyedrills_qvshl/goose.nicole1.mp4	moose	goose	food	shoe
+consonants-eyedrills_qvshl/hot.nicole1.mp4	pot	hot
+consonants-eyedrills_snkyy/typing.nicole1.mp4	apply	apparatus	typing	table	cabbage
+consonants-eyedrills_snkyy/chop.nicole1.mp4	top	chop
+consonants-eyedrills_wa0d1/tab.nicole1.mp4	table	cabbage	describe	tab
+consonants-eyedrills_wa0d1/apparatus.nicole1.mp4	apply	apparatus	typing	table	cabbage
+consonants-eyedrills_wa0d1/moose.nicole1.mp4	moose	goose	food	shoe
+consonants-eyedrills_s97sz/home.nicole1.mp4	soap	stop	home	food	point
+consonants-eyedrills_s97sz/pill.nicole1.mp4	pill	chill
