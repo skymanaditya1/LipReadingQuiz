@@ -32,7 +32,7 @@ def register(request):
             user = authenticate(username=username, password=password)
             login(request, user)
 
-            return redirect(reverse("dashboard"))
+            return redirect(reverse("lipquiz:lip-quiz-view"))
     else:
         form = SignUpForm()
         profile_form = UserProfileForm()
