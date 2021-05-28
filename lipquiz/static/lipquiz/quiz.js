@@ -9,15 +9,16 @@ $.ajax({
     type: 'GET',
     url: `${url}data`,
     success: function(response){
+        var counter = 1
         response.forEach(element => {
             quizBox.innerHTML += `
                 <hr>
                 <div class="mb-2">
-                    <b>${element.question}</b>
+                    <b>${counter}. ${element.question}</b>
                 </div>
 
                 <div class="mb-2">
-                    <video width="320" height="240" controls>
+                    <video width="320" height="240" controls muted>
                         <source src="/media/${element.video_path}" type="video/mp4">
                     </video>
                 </div>
@@ -30,6 +31,8 @@ $.ajax({
                     </div>
                 `
             });
+
+            counter += 1
         })
     },
     error: function(error){
