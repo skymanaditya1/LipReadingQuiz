@@ -19,4 +19,5 @@ class SingleWordResult(models.Model):
     score = models.FloatField()
 
     def __str__(self):
-        return str(self.pk)
+        return self.quiz.name + "_" + self.user.username
+        # return str(self.pk)
