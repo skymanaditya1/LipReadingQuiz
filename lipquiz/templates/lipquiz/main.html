@@ -30,8 +30,9 @@
 <hr>
 
 <!-- Show a button link for every quiz present-->
+<ul>
 {% for obj in object_list %}
-    <button class="btn btn-link start-quiz-button"
+    <li><button class="btn btn-link start-quiz-button"
         data-quiz="{{obj.name}}"
         data-pk="{{obj.pk}}"
         data-questions="{{obj.number_of_questions}}"
@@ -41,8 +42,9 @@
         data-toggle="modal"
         data-target="#quizStartModal">
         {{obj.name}}
-    </button><br>
+    </button></li><br>
 {% endfor %}
+</ul>
 {% else %}
     <p>Please <a href="{% url 'login' %}">login</a> to view the Quizzes</p>
 {% endif %}
