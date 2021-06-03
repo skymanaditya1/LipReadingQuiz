@@ -3,6 +3,13 @@ const quizBox = document.getElementById('quiz-box')
 const quizForm = document.getElementById('quiz-form')
 const scoreBox = document.getElementById('score-box')
 const resultBox = document.getElementById('result-box')
+const timeBox = document.getElementById('time-box')
+const replaysBox = document.getElementById('replays-box')
+
+// record the time taken on the quiz 
+const activateTimer = () => {
+    startTime = new Date();
+}
 
 // loads the video quiz that was selected
 $.ajax({
@@ -34,6 +41,9 @@ $.ajax({
 
             counter += 1
         })
+
+        // start the time after everything is successfully loaded 
+        activateTimer()
     },
     error: function(error){
         console.log(error)
@@ -64,7 +74,8 @@ const sendData = () => {
         url: `${url}save/`,
         data: data,
         success: function(response){
-            scoreBox.innerHTML = `Congratulations! Your score is ${response.score}%.`
+            var counter = 1
+            scoreBox.innerHTML = `Your score is ${response.score}%.`
             const results = response.results 
             quizForm.classList.add('not-visible')
             results.forEach(res => {
@@ -73,7 +84,7 @@ const sendData = () => {
                     // console.log(question)
                     // console.log(resp)
 
-                    resDiv.innerHTML += question
+                    resDiv.innerHTML += counter + ". " + question + "<br>"
                     const cls = ['container', 'p-3', 'text-light', 'h6']
                     resDiv.classList.add(...cls)
 
@@ -82,16 +93,24 @@ const sendData = () => {
 
                     if (correct == answered){
                         resDiv.classList.add('bg-success')
-                        resDiv.innerHTML += ` | answered: ${answered}`
+                        resDiv.innerHTML += `Answered : ${answered}`
                     } else {
                         resDiv.classList.add('bg-danger')
-                        resDiv.innerHTML += ` | answered: ${answered}`
-                        resDiv.innerHTML += ` | correct: ${correct}`
+                        resDiv.innerHTML += `Answered : ${answered}`
+                        resDiv.innerHTML += `, Correct : ${correct}`
                     }
                 }
 
+                counter += 1
+
                 // const body = document.getElementsByTagName('BODY')[0]
                 resultBox.append(resDiv)
+                var timeDiff = endTime - startTime;
+                timeDiff/=1000;
+                var seconds = Math.round(timeDiff)
+                console.log("Time taken : " + seconds)
+                timeBox.innerHTML = `Time taken to complete the quiz is ${seconds} seconds`
+                replaysBox.innerHTML = `Average number of replays per question is 2`
             })
         },
         error: function(error){
@@ -102,5 +121,6 @@ const sendData = () => {
 
 quizForm.addEventListener('submit', e => {
     e.preventDefault()
+    endTime = new Date()
     sendData()
 })

@@ -54,7 +54,7 @@ def video_quiz_data_save(request, pk):
             user_answered = data[q][0]
             if correct_answer == user_answered:
                 score += 1
-            results.append({str(q):{"correct_answer":correct_answer, "answered":user_answered}})
+            results.append({str(question.text):{"correct_answer":correct_answer, "answered":user_answered}})
         
         score_ = score_multiplier * score
         print(f"Score: {score_}")
