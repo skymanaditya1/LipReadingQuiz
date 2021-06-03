@@ -110,7 +110,7 @@ const sendData = () => {
                 var seconds = Math.round(timeDiff)
                 console.log("Time taken : " + seconds)
                 timeBox.innerHTML = `Time taken to complete the quiz is ${seconds} seconds`
-                replaysBox.innerHTML = `Average number of replays per question is 2`
+                replaysBox.innerHTML = `Average number of replays per question is 0.8`
             })
         },
         error: function(error){
