@@ -23,6 +23,7 @@ class VideoQuiz(models.Model):
     difficulty = models.CharField(max_length=6, choices=DIFF_CHOICES)
     quiz_type = models.CharField(max_length=120, choices=QUIZ_TYPE)
     score_required_to_pass = models.IntegerField(help_text="Minimum score required to pass the quiz")
+    is_visible = models.BooleanField(help_text="Whether the quiz is visible or not", default=False)
 
     def __str__(self):
         return f"{self.name}--{self.description}"

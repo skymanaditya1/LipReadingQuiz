@@ -32,17 +32,19 @@
 <!-- Show a button link for every quiz present-->
 <ul>
 {% for obj in object_list %}
-    <li><button class="btn btn-link start-quiz-button"
-        data-quiz="{{obj.name}}"
-        data-pk="{{obj.pk}}"
-        data-questions="{{obj.number_of_questions}}"
-        data-description="{{obj.description}}"
-        data-difficulty="{{obj.difficulty}}"
-        data-quiz-type="{{obj.quiz_type}}"
-        data-toggle="modal"
-        data-target="#quizStartModal">
-        {{obj.name}}
-    </button></li><br>
+    {% if obj.is_visible %}
+      <li><button class="btn btn-link start-quiz-button"
+          data-quiz="{{obj.name}}"
+          data-pk="{{obj.pk}}"
+          data-questions="{{obj.number_of_questions}}"
+          data-description="{{obj.description}}"
+          data-difficulty="{{obj.difficulty}}"
+          data-quiz-type="{{obj.quiz_type}}"
+          data-toggle="modal"
+          data-target="#quizStartModal">
+          {{obj.name}}
+      </button></li><br>
+    {% endif %}
 {% endfor %}
 </ul>
 {% else %}

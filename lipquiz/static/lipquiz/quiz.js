@@ -5,11 +5,21 @@ const scoreBox = document.getElementById('score-box')
 const resultBox = document.getElementById('result-box')
 const timeBox = document.getElementById('time-box')
 const replaysBox = document.getElementById('replays-box')
+var videoViews = 0
 
 // record the time taken on the quiz 
 const activateTimer = () => {
     startTime = new Date();
 }
+
+// Count the number of times videos have been played on the quiz
+// const countViews = () => {
+//     var v = document.getElementsByTagName("video")[0];
+//     v.addEventListener("ended", function() { 
+//         videoViews += 1;
+//         alert(`Video has been viewed! ${videoViews}`); 
+//     }, true);
+// }
 
 // loads the video quiz that was selected
 $.ajax({
@@ -44,6 +54,7 @@ $.ajax({
 
         // start the time after everything is successfully loaded 
         activateTimer()
+        // countViews()
     },
     error: function(error){
         console.log(error)
@@ -74,6 +85,7 @@ const sendData = () => {
         url: `${url}save/`,
         data: data,
         success: function(response){
+            console.log(`Video views : ${videoViews}`)
             var counter = 1
             scoreBox.innerHTML = `Your score is ${response.score}%.`
             const results = response.results 
@@ -110,7 +122,7 @@ const sendData = () => {
                 var seconds = Math.round(timeDiff)
                 console.log("Time taken : " + seconds)
                 timeBox.innerHTML = `Time taken to complete the quiz is ${seconds} seconds`
-                replaysBox.innerHTML = `Average number of replays per question is 0.8`
+                // replaysBox.innerHTML = `Average number of replays per question is 0.8`
             })
         },
         error: function(error){
