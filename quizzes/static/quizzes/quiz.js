@@ -71,6 +71,7 @@ $.ajax({
                         <b>${question}</b>
                     </div>
                 `
+                quizBox.innerHTML += `<div class="questions_wrapper">`
                 answers.forEach(answer => {
                     quiz_box.innerHTML += `
                         <div>
@@ -79,6 +80,7 @@ $.ajax({
                         </div>
                     `
                 })
+                quizBox.innerHTML += `</div>`
             }
         });
 

@@ -35,19 +35,26 @@ $.ajax({
                 </div>
 
                 <div class="mb-2">
-                    <video width="320" height="240" controls muted>
+                    <video width="460" controls muted>
                         <source src="/media/${element.video_path}" type="video/mp4">
                     </video>
                 </div>
             `
+
+            var content = ``
+            content += `<div class="ans_wrapper">`
             element.answer.forEach(choice => {
-                quizBox.innerHTML += `
-                    <div>
+                content += `
+                    <div class="ans_classes ans_single">
                         <input type="radio" class="ans" id="${element.video_path}-${choice}" name="${element.video_path}" value="${choice}" >
-                        <label for="${element.video_path}">${choice}</label>
+                        <label id="${counter}-${choice}" for="${element.video_path}-${choice}">${choice}</label>
                     </div>
                 `
             });
+            content += `</div>`
+
+            quizBox.innerHTML += content
+            // quizBox.innerHTML += `</div>`
 
             counter += 1
         })
@@ -89,28 +96,65 @@ const sendData = () => {
             var counter = 1
             scoreBox.innerHTML = `Your score is ${response.score}%.`
             const results = response.results 
-            quizForm.classList.add('not-visible')
+            // quizForm.classList.add('not-visible')
+
+            const submitBtn = document.getElementById('submit-quiz-btn-id')
+            submitBtn.classList.add('not-visible')
+
+            const tryBtn = document.getElementById('try-again-btn')
+            tryBtn.classList.remove('not-visible')
+
+            var radios = document.getElementsByTagName('input');
+            for (var i=0, iLen=radios.length; i<iLen; i++) {
+                radios[i].disabled = true;
+            } 
+
+            var questions = document.getElementsByClassName('ans_classes');
+            for (var i=0, iLen=questions.length; i<iLen; i++) {
+                questions[i].classList.remove('ans_single')
+                questions[i].classList.add('ans_single_submitted')
+            }
+
             results.forEach(res => {
                 const resDiv = document.createElement("div")
                 for (const [question, resp] of Object.entries(res)){
                     // console.log(question)
                     // console.log(resp)
 
-                    resDiv.innerHTML += counter + ". " + question + "<br>"
-                    const cls = ['container', 'p-3', 'text-light', 'h6']
-                    resDiv.classList.add(...cls)
+                    // resDiv.innerHTML += counter + ". " + question + "<br>"
+                    // const cls = ['container', 'p-3', 'text-light', 'h6']
+                    // resDiv.classList.add(...cls)
 
                     const correct = resp['correct_answer']
                     const answered = resp['answered']
 
-                    if (correct == answered){
-                        resDiv.classList.add('bg-success')
-                        resDiv.innerHTML += `Answered : ${answered}`
-                    } else {
-                        resDiv.classList.add('bg-danger')
-                        resDiv.innerHTML += `Answered : ${answered}`
-                        resDiv.innerHTML += `, Correct : ${correct}`
+                    
+                    var label = counter+'-'+correct
+                    var cl = "answered-wrong"
+                    
+                    if (correct == answered) {
+                        cl = "answered-correct"
+                        document.getElementById(label).classList.add('answered-correct')
                     }
+                    else {
+                        document.getElementById(label).classList.add('correct')
+                    }
+
+
+                    resDiv.innerHTML += `<div class="single-result">
+                        <div class="single-result-blocks ans-num">${counter}</div> 
+                        <div class="single-result-blocks ${cl}">
+                        Answered: ${answered}</div>
+                        <div class="single-result-blocks correct">Correct: ${correct}</div></div>`
+
+                    // if (correct == answered){
+                    //     resDiv.classList.add('bg-success')
+                    //     resDiv.innerHTML += `Answered : ${answered}`
+                    // } else {
+                    //     resDiv.classList.add('bg-danger')
+                    //     resDiv.innerHTML += `Answered : ${answered}`
+                    //     resDiv.innerHTML += `, Correct : ${correct}`
+                    // }
                 }
 
                 counter += 1
