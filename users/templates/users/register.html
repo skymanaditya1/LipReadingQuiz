@@ -4,15 +4,15 @@
 
 <!-- These tags represent the document structure over which sections of CSS can be applied -->
 {% block content %}
-  <h2>Register</h2>
-  <form method="post">
+  <h2 class="heading">Register</h2>
+  <form id="register-form" method="post">
     {% csrf_token %}
     {% for field in form %}
       <p>
         {{ field.label_tag }}<br>
         {{ field }}
         {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
+          <br><small style="color: grey">{{ field.help_text }}</small>
         {% endif %}
         {% for error in field.errors %}
           <p style="color: red">{{ error }}</p>
@@ -24,7 +24,7 @@
         {{ field.label_tag }}<br>
         {{ field }}
         {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
+          <br><small style="color: grey">{{ field.help_text }}</small>
         {% endif %}
         {% for error in field.errors %}
           <p style="color: red">{{ error }}</p>
@@ -32,9 +32,9 @@
       </p>
     {% endfor %}
     
-    <button type="submit">Register</button>
+    <button id='register-submit-btn' type="submit">Register</button>
   </form>
 
 <br/>
-<a href="{% url 'login' %}">Back to login</a>
+<a id="back-to-login" class="btn btn-danger goback" href="{% url 'login' %}">Back to login</a>
 {% endblock %}

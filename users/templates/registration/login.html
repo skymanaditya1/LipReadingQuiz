@@ -3,17 +3,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Login</h2>
+<h2 class="heading">Login</h2>
 
-<form method="post">
+<form class="login-form" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Login">
+    <input id="register-submit-btn" type="submit" value="Login">
 </form>
 <br>
 
 <!-- This line uses reverse mapping to map back to the user dashboard -->
-<a href="{% url 'dashboard' %}">Back to dashboard</a><br>
-<a href="{% url 'password_reset' %}">Reset password</a><br>
-<a href="{% url 'register' %}">Register</a>
+<!-- <a class="login-options" href="{% url 'dashboard' %}">Back to dashboard</a><br> -->
+<a class="login-options" href="{% url 'password_reset' %}">Reset password</a>
+<a class="login-options" href="{% url 'register' %}">Register</a>
 {% endblock %}
