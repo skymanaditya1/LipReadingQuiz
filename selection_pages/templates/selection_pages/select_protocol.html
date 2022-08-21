@@ -1,4 +1,4 @@
-<h1>Select lipreading traininig protocol</h1>
+<h1 class="heading">Select lipreading training protocol</h1>
 {% extends "base.html" %}
 
 {% load static %}
@@ -11,26 +11,33 @@
 {% if user.is_authenticated %}
 <link rel="stylesheet" type="text/css" href="{% static 'selection_pages/style.css' %}"/>
 
-<label>
-    <input type="radio" name="test" value="lipread_words" class="ans" checked>
-    <img src="static/images/lipread_words.png" alt="Lipread isolated words">
-  </label>
-  
-  <label>
-    <input type="radio" name="test" value="lipread_sentences" class="ans">
-    <img src="static/images/lipread_sentence.png" alt="Lipread sentence with context">
-  </label>
+<div class="protocol_selection_wrapper">
+  <div class="protocol_selection_label_wrapper">
+    <label class="protocol_selection_label">
+      <span class="protocol_name">Lipread<br>Words</span>
+      <input type="radio" name="test" value="lipread_words" class="ans" checked>
+      <img src="static/images/lipread_words.png" alt="Lipread isolated words">
+    </label>
+    
+    <label class="protocol_selection_label">
+      <span class="protocol_name">Lipread<br>Sentences</span>
+      <input type="radio" name="test" value="lipread_sentences" class="ans">
+      <img src="static/images/lipread_sentence.png" alt="Lipread sentence with context">
+    </label>
 
-  <label>
-    <input type="radio" name="test" value="lipread_missing" class="ans">
-    <img src="static/images/lipread_missing.png" alt="Lipread missing words in sentences">
-  </label>
+    <label class="protocol_selection_label">
+      <span class="protocol_name">Lipread Missing Words in Sentences</span>
+      <input type="radio" name="test" value="lipread_missing" class="ans">
+      <img src="static/images/lipread_missing.png" alt="Lipread missing words in sentences">
+    </label>
+  </div>
 
-  <!-- The url selected depends on the radiobutton that was selected before submit -->
+    <!-- The url selected depends on the radiobutton that was selected before submit -->
 
-  <!-- <button id='protocol_select_button' onclick="location.href = '/quizzes'">Click</button> -->
-  <br/>
-  <button id='protocol_select_button'>Submit</button>
+    <!-- <button id='protocol_select_button' onclick="location.href = '/quizzes'">Click</button> -->
+    <br/>
+    <button id='protocol_select_button' class="btn btn-primary mt-3 submit-quiz-btn">Submit</button>
+  </div>
 
   <!-- Button trigger modal -->
   <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
