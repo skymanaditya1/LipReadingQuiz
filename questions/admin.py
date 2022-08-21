@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Question, Answer, SingleWordQuestion, SingleWordAnswer
+from .models import MissingWordsAnswer, MissingWordsQuestion, Question, Answer, SingleWordQuestion, SingleWordAnswer
 
 # Register your models here.
 class AnswerInline(admin.TabularInline):
@@ -19,3 +19,13 @@ class SingleWordQuestionAdmin(admin.ModelAdmin):
 
 admin.site.register(SingleWordQuestion, SingleWordQuestionAdmin)
 admin.site.register(SingleWordAnswer)
+
+# register models corresponding to the missing words in sentence lipreading protocol 
+class MissingWordsAnswerInline(admin.TabularInline):
+    model = MissingWordsAnswer
+
+class MissingWordsQuestionAdmin(admin.ModelAdmin):
+    inlines = [MissingWordsAnswerInline]
+
+admin.site.register(MissingWordsQuestion, MissingWordsQuestionAdmin)
+admin.site.register(MissingWordsAnswer)

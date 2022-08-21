@@ -6,6 +6,7 @@ const modalBody = document.getElementById("model-body-confirm")
 const startButton = document.getElementById("start-button")
 url = window.location.href 
 
+// Grab all the information that needs to be displayed
 quizButtons.forEach(quizButton => quizButton.addEventListener('click', () => {
     const name = quizButton.getAttribute("data-quiz")
     const pk = quizButton.getAttribute("data-pk")

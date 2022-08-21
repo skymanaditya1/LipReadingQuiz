@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block scripts %}
+    <script src="{% static 'lipquiz/main.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<!-- Modal -->
+<div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Start?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="model-body-confirm"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+          <button type="button" id="start-button" class="btn btn-success">Yes</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="h1">Quiz List</div>
+<hr>
+
+<!-- Show a button link for every quiz present-->
+<ul>
+{% for obj in object_list %}
+    {% if obj.is_visible %}
+      <li><button class="btn btn-link start-quiz-button"
+          data-quiz="{{obj.name}}"
+          data-pk="{{obj.pk}}"
+          data-questions="{{obj.number_of_questions}}"
+          data-description="{{obj.description}}"
+          data-difficulty="{{obj.difficulty}}"
+          data-quiz-type="{{obj.quiz_type}}"
+          data-toggle="modal"
+          data-target="#quizStartModal">
+          {{obj.name}}
+      </button></li><br>
+    {% endif %}
+{% endfor %}
+</ul>
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to view the Quizzes</p>
+{% endif %}
+{% endblock content %}

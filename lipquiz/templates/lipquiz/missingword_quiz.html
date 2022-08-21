@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+{% block scripts %}
+    <script src="{% static 'lipquiz/quiz_missingwords.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block title %}
+{{obj.name}}
+{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <div class="heading">
+        <b>Quiz: {{obj.name}}</b>
+    </div>
+    <br>
+
+    <!-- <a href="{% url 'lipquiz:lip-missing-words-quiz-view' %}" class="btn btn-danger goback">Go back</a> -->
+
+    <form id='quiz-form' class='mt-3 mb-3'>
+        {% csrf_token %}
+        <div id="quiz-box"></div>
+        <div id="submit-quiz-btn-id" class="submit-btn-div">
+            <button type="submit" class="btn btn-primary mt-3 submit-quiz-btn">Submit</button>
+        </div>
+    </form>
+
+<div id="score-box"></div>
+<div id="time-box"></div>
+<div id="replays-box"></div>
+<div id="result-box"></div>
+<a href="" class="try-again not-visible" id="try-again-btn"><img id="try-again-img" src="/static/try_again.png">Try Again </a>
+{% else %}
+    <p>Please <a href="{% url 'login' %}">login</a> to attempt the Quiz</p>
+{% endif %}
+{% endblock content %}

@@ -22,9 +22,10 @@ from django.conf import settings
 # Application urls are added to the project urls
 urlpatterns = [
     path('wordquiz/quiz/', include('quizzes.urls', namespace='quizzes')),
-    path('', include('lipquiz.urls')),
+    path('quizzes/', include('lipquiz.urls')),
     path('user/', include('users.urls')),
     path('admin/admin/', admin.site.urls),
+    path('', include('selection_pages.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
