@@ -67,6 +67,8 @@ TEMPLATES = [
                 os.path.join(BASE_DIR, 'templates'),
                 os.path.join(BASE_DIR, 'quizzes/templates'),
                 os.path.join(BASE_DIR, 'users/templates'),
+                os.path.join(BASE_DIR, 'lipquiz/templates'),
+                os.path.join(BASE_DIR, 'selection_pages/templates'),
             ],
         'APP_DIRS': True,
         'OPTIONS': {

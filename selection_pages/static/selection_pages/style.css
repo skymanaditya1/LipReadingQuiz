@@ -9,8 +9,8 @@
   /* IMAGE STYLES */
   [type=radio] + img {
     cursor: pointer;
-    width: 250;
-    height: 200;
+    width: 320;
+    height: 350;
   }
   
   /* CHECKED STYLES */
