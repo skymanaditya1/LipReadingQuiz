@@ -39,6 +39,7 @@ $.ajax({
             
             content += `
                     <input type="text" class="ans" id="${element.question}" name="${element.video_path}" value="">
+                    <div id="correct-${counter}" class="correct mwis-correct not-visible"></div>
             `
             content += `</div>`
 
@@ -80,7 +81,15 @@ const sendData = () => {
             // Hide the form after the quiz is submitted and display the results
             const results = response.results
             console.log(results)
-            quizForm.classList.add('not-visible')
+            // quizForm.classList.add('not-visible')
+
+            const tryBtn = document.getElementById('try-again-btn')
+            tryBtn.classList.remove('not-visible')
+
+            var texts = document.getElementsByTagName('input');
+            for (var i=0, iLen=texts.length; i<iLen; i++) {
+                texts[i].disabled = true;
+            } 
 
             var counter = 1
             results.forEach(res => {
@@ -111,7 +120,11 @@ const sendData = () => {
                         document.getElementById(label).classList.add('answered-correct')
                     }
                     else {
-                        document.getElementById(label).classList.add('correct')
+                        document.getElementById(label).classList.add('answered-wrong')
+
+                        var correctDiv = document.getElementById('correct-'+counter)
+                        correctDiv.innerHTML = correct
+                        correctDiv.classList.remove('not-visible')
                     }
 
                     resDiv.innerHTML += `<div class="single-result">
