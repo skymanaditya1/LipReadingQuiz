@@ -63,7 +63,6 @@ dask==2.5.2
 dataclasses==0.6
 decorator==4.4.0
 defusedxml==0.6.0
-detectron2 @ git+https://github.com/facebookresearch/detectron2.git@5aeb252b194b93dc2879b4ac34bc51a31b5aee13
 Distance==0.1.3
 distributed==2.5.2
 dj-database-url==0.5.0
