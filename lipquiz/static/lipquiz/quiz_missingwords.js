@@ -38,7 +38,7 @@ $.ajax({
             content += `<div class="ans_wrapper">`
             
             content += `
-                    <input type="text" class="ans" id="${element.question}" name="${element.video_path}" value="">
+                    <input autocomplete="false" type="text" class="ans" id="${element.question}" name="${element.video_path}" placeholder="Your answer" value="">
                     <div id="correct-${counter}" class="correct mwis-correct not-visible"></div>
             `
             content += `</div>`
@@ -77,6 +77,8 @@ const sendData = () => {
         data: data,
         success: function(response){
             console.log(response)
+
+            scoreBox.innerHTML = `Your score is ${response.score}%.`
 
             // Hide the form after the quiz is submitted and display the results
             const results = response.results
@@ -137,6 +139,12 @@ const sendData = () => {
                 counter += 1
 
                 resultBox.append(resDiv)
+
+                var timeDiff = endTime - startTime;
+                timeDiff/=1000;
+                var seconds = Math.round(timeDiff)
+                console.log("Time taken : " + seconds)
+                timeBox.innerHTML = `Time taken to complete the quiz is ${seconds} seconds`
             })
         },
         error: function(error){

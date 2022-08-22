@@ -129,13 +129,14 @@ def video_missing_words_quiz_data_save(request, pk):
             print('key: ', q)
             question = MissingWordsQuestion.objects.get(video_path=q)
             answers = question.get_answers()
-            user_answered = data[q]
-            answer = answers[0].answer
+            user_answered = data[q].lower()
+            answer = answers[0].answer.lower()
             print(f'Correct answer : {answer}, user answered : {user_answered}')
             # questions.append(question)
 
             # for each question if the answered question is the correct answer 
             if answer == user_answered:
+                print(f'{answer.lower()}, {user_answered.lower()}')
                 correct += 1
 
             total_questions += 1
@@ -165,29 +166,12 @@ def lipread_words(request):
     pk, name, description, num_questions, difficulty, _ = str(words_quiz).split(';')
     print(f'Fields are : {type(pk)}, {name}, {description}')
 
-    # # lipreading words protocol 
-    # videoquiz = VideoQuiz.objects.get(pk=id)
-    # questions = list()
-    # response = list()
-    # for q in videoquiz.get_questions():
-    #     answers = list()
-    #     for a in q.get_answers():
-    #         answers.append(a.text)
-    #     #questions.append({str(q.pk) + " " + q.text : answers})
-    #     print(f"Video path: {q.video_path}")
-    #     response.append({'question': q.text, 'video_path': q.video_path, 'answer': answers})
-    #     questions.append({q.video_path : answers})
-
-    # print(f"Response: {response}")
-    # return JsonResponse(response, safe=False)
     pk = int(pk)
     print(f'The primary key is : {pk}, and type is : {type(pk)}')
 
     videoquiz = VideoQuiz.objects.get(id=pk)
     print(f'Video quiz is : {videoquiz}')
     return render(request, 'lipquiz/missingword_quiz.html', {'obj': videoquiz})
-
-    # return render(request, 'lipquiz/lipread_words.html')
 
 
 def lipread_sentences(request):

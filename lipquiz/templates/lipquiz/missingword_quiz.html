@@ -18,9 +18,9 @@
     </div>
     <br>
 
-    <!-- <a href="{% url 'lipquiz:lip-missing-words-quiz-view' %}" class="btn btn-danger goback">Go back</a> -->
+    <a href="{% url 'selection_pages:lipreading-protocol-selection' %}" class="btn btn-danger goback">Go back</a>
 
-    <form id='quiz-form' class='mt-3 mb-3'>
+    <form autocomplete="off" id='quiz-form' class='mt-3 mb-3'>
         {% csrf_token %}
         <div id="quiz-box"></div>
         <div id="submit-quiz-btn-id" class="submit-btn-div">

@@ -15,6 +15,7 @@
         <div class="row homepagerow">
             {% if user.is_authenticated %} 
                 <a class="take-quiz" href="/protocol_selection">Take Quiz</a>
+                <a class="logout" href="{% url 'logout' %}"><img class="logout-img" src="static/images/logout_icon.png" width="30" alt=""></a>
             {% else %}
                 <a class="take-quiz" href="{% url 'login' %}">Take Quiz</a>
             {% endif %}

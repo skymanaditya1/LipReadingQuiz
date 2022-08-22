@@ -17,9 +17,9 @@ protocol_submit_button.onclick = function(event){
 
             // These values are being hard-coded for the moment -- but they will be corrected later
             if (selected == "lipread_words"){
-                location.href = '/quizzes/lipread_sentences/3'
-            } else if (selected == "lipread_sentences"){
                 location.href = '/quizzes/lipread_sentences/1'
+            } else if (selected == "lipread_sentences"){
+                location.href = '/quizzes/lipread_sentences/3'
             } else if (selected == "lipread_missing"){
                 location.href = '/quizzes/lipread_missing/1'
             }

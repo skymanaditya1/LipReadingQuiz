@@ -11,6 +11,8 @@
 {% if user.is_authenticated %}
 <link rel="stylesheet" type="text/css" href="{% static 'selection_pages/style.css' %}"/>
 
+<a href="{% url 'selection_pages:landing-surrogate' %}" class="btn btn-danger goback">Go back</a>
+
 <div class="protocol_selection_wrapper">
   <div class="protocol_selection_label_wrapper">
     <label class="protocol_selection_label">
